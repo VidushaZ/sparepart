@@ -9,6 +9,7 @@ import NavBar from "./components/navbar"
 import Register from "./components/register";
 import ProductDetail from "./components/productDetail";
 import ProductEdit from "./components/productEdit";
+import ProfileEdit from "./components/editProfile";
 import Login from "./components/login";
 import {ProtectRoute} from "./components/protectRoutes"
 import Carts from "./components/carts"
@@ -93,6 +94,8 @@ function App(){
 
        
         < Route exact path="/login" component={Login}/>
+
+        < Route exact path="/editProfile" component={ProfileEdit}/>
 
         < Route exact path="/Cart" component={Carts}/>
 

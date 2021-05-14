@@ -98,12 +98,7 @@ export default class EditAvenger extends Component {
     e.preventDefault();
 
    
-  
-
-   
-
-   
-         const avengerObject = {
+         const productObject = {
       name: this.state.name,
       description: this.state.description,
       price: this.state.price,
@@ -113,7 +108,7 @@ export default class EditAvenger extends Component {
     };
 
 
-    axios.put('http://localhost:5000/api/products/' + this.props.match.params.id, avengerObject, {
+    axios.put('http://localhost:5000/api/products/' + this.props.match.params.id, productObject, {
        headers:{
         "token":token
     }

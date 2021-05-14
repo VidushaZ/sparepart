@@ -11,6 +11,7 @@ class UserOrders extends Component {
         allOrders: [],
         allOrderItems: [],
         allOrderStatus: [],
+        userId: '',
         
        
         

@@ -37,34 +37,34 @@ class ProductsUsers extends Component {
   <Carousel.Item interval={2000}>
     <img
       className="d-block w-100"
-      src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/01/19/950817-covid19.jpg"
+      src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlydXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
       alt="First slide"
     />
     <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <h3>Wear a proper mask</h3>
+      <p>Masks alone will not protect you. To fight coronavirus, also ensure physical distancing and frequent handwashing. Learn about Coronavirus. Official info on COVID-19.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item interval={2000}>
     <img
       className="d-block w-100"
-      src="https://www.who.int/images/default-source/health-topics/coronavirus/myth-busters/web-mythbusters/who_hydroxychloraquine_hd.jpg"
+      src="https://thumbs.dreamstime.com/b/d-illustration-closeup-blue-colored-corona-virus-isolated-black-background-d-illustration-closeup-corona-virus-black-175511436.jpg"
       alt="Second slide"
     />
     <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3>Clean your hands</h3>
+      <p>Appropriate hand hygiene reduces the risk on SARS-CoV-2 - the virus that causes COVID-19 - infection among health workers. 1 in 3 facilities lack hand hygiene </p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item interval={2000}>
     <img
       className="d-block w-100"
-      src="https://www.hpcismart.com/images/website/ManChemNews/DIR_189/F_98505.jpg"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoRto8_xunvJApve3EgRlNk-jrTHqNay99Gx8DRMG3g0um3Y2QA4GixFe2T47PR-3ycCs&usqp=CAU"
       alt="Third slide"
     />
     <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <h3>Keep a safe distance</h3>
+      <p>What to do to keep yourself and others safe from COVID-19. Maintain at least a 1-metre distance between yourself and others to reduce your risk of infection</p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>

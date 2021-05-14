@@ -21,26 +21,18 @@ class Order extends Component {
     };
     async componentDidMount() {
 
-       
-
-      
-
+ 
 
     await axios.get('http://localhost:5000/api/orders/status/' + this.props.order.orderId)
     .then((response) => {
          
-      
-
-
-         
+   
           this.setState({ orderStatus: response.data.status})
 
           this.setState({Status: this.state.orderStatus })
 
        })
-       .catch((error) => {
-         console.log(error);
-       });
+
     
 
       }

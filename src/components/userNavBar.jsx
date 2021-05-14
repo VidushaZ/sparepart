@@ -33,7 +33,9 @@ class UserNavBar extends Component {
       
       <Link to="Cart" className="nav-link">Cart</Link>
       <Link to="orders" className="nav-link">Orders</Link>
+      <Link to="editProfile" className="nav-link">Edit Profile</Link>
       <Link to="about" className="nav-link">About Us</Link>
+     
       
     </ul>
     <form className="form-inline my-2 my-lg-0">
