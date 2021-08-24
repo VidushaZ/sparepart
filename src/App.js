@@ -2,7 +2,8 @@ import React, {useState} from "react";
 import ReactDom from "react-dom";
 import { BrowserRouter, Route, Switch} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Products from "./components/products";
+//import Products from "./components/products";
+import ProductsTest from "./components/Products/index";
 import ProductsUser from "./components/userProducts";
 import HomeProducts from "./components/homeProducts";
 import NavBar from "./components/navbar"
@@ -44,7 +45,7 @@ function App(){
 
    
 
-       
+       <Route exact path="/" component={ProductsTest}/>
         < Route exact path="/login" component={Login}/>
 
 
@@ -57,7 +58,7 @@ function App(){
         
         <Route exact path="/detail/:id" component={ProductDetail}/>
        
-        <Route exact path="/Products" component={Products}/>
+        <Route exact path="/Products" component={ProductsTest}/>
 
       
         <Route path= "" component={() => "404 NOT FOUND"}/>
