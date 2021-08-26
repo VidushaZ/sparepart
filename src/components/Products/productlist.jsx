@@ -15,6 +15,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,15 +51,19 @@ export default function RecipeReviewCard(props) {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
+  
   return (
     <Card className={classes.root}>
       <CardHeader
       
         avatar={
-          <Avatar aria-label="recipe" className={classes.avatarRed}>
-            R
-          </Avatar>
+          {...props.product.isAvailable ?  <Tooltip title="Available" placement="top"><Avatar aria-label="recipe" className={classes.avatarGreen}>
+          A
+        </Avatar></Tooltip> : <Tooltip title="Out of Stock" ><Avatar aria-label="recipe" className={classes.avatarRed}>
+        O
+      </Avatar>
+      </Tooltip>
+      }
         }
         action={
           <IconButton aria-label="settings">
