@@ -79,11 +79,9 @@ export default function RecipeReviewCard(props) {
       />
       
       <CardActions disableSpacing>
+        Rs {props.product.price}
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
         </IconButton>
         <IconButton
           className={clsx(classes.expand, {
