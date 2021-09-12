@@ -19,7 +19,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Editproduct from '../Dialogs/editproduct';
-import EditproductTest from '../Dialogs/editproductTest';
+import Confirmdelete from '../Dialogs/confirm';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -51,6 +51,8 @@ export default function RecipeReviewCard(props) {
 	const [ anchorEl, setAnchorEl ] = React.useState(null);
 	const [ expanded, setExpanded ] = React.useState(false);
 	const [ editopen, setEditopen ] = React.useState(false);
+	const [ deleteopen, setDeleteopen ] = React.useState(false);
+
 	const classes = useStyles();
 
 	const handleClick = (event) => {
@@ -65,6 +67,13 @@ export default function RecipeReviewCard(props) {
 	};
 	const handleEditclose = () => {
 		setEditopen(false);
+	};
+
+	const handleDeleteopen = () => {
+		setDeleteopen(true);
+	};
+	const handleDeleteclose = () => {
+		setDeleteopen(false);
 	};
 
 	const handleExpandClick = () => {
@@ -102,7 +111,10 @@ export default function RecipeReviewCard(props) {
 							<MenuItem opened="true" onClick={handleEditopen}>
 								Edit
 							</MenuItem>
-							<MenuItem onClick={handleMenuClose}>Delete</MenuItem>
+							<MenuItem opened="true" onClick={handleDeleteopen}>
+								Delete
+							</MenuItem>
+							{/* {props.product.isAvailable ? <MenuItem onClick={handleMenuClose}>Out of stock</MenuItem> : null} */}
 						</Menu>
 					</IconButton>
 				}
@@ -139,6 +151,14 @@ export default function RecipeReviewCard(props) {
 					itemid={props.product.id}
 					handleEditclose={handleEditclose}
 					handleMenuClose={handleMenuClose}
+				/>
+			) : null}
+			{deleteopen ? (
+				<Confirmdelete
+					itemid={props.product.id}
+					itemname={props.product.name}
+					handleMenuClose={handleMenuClose}
+					handleDeleteclose={handleDeleteclose}
 				/>
 			) : null}
 		</Card>
