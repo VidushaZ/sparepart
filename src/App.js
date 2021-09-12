@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './App.css';
 import ReactDom from "react-dom";
 import { BrowserRouter, Route, Switch} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,6 +22,7 @@ import OrderDetail from "./components/orderDetails"
 import Orders from "./components/orders"
 import {decode as base64_decode, encode as base64_encode} from 'base-64'
 import UserNavBar from "./components/userNavBar"
+import Header from "./components/Header"
 
 
 let token =localStorage.getItem('login')
@@ -35,7 +37,7 @@ function App(){
 
     return (
 <BrowserRouter>
-<NavBar/>
+<Header/>
 <Switch>
     
        <ProtectRoute   exact path="/edit/:id" component={ProductEdit}></ProtectRoute>
