@@ -41,7 +41,7 @@ class Products extends Component {
 						<Carousel.Item interval={2000} className={classes.Carousel}>
 							<img
 								className="d-block w-100"
-								src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/01/19/950817-covid19.jpg"
+								src="https://www.i4u.com/wp-content/uploads/2021/06/2947967.jpg"
 								alt="First slide"
 							/>
 							<Carousel.Caption>
@@ -52,7 +52,7 @@ class Products extends Component {
 						<Carousel.Item interval={2000} className={classes.Carousel}>
 							<img
 								className="d-block w-100"
-								src="https://www.who.int/images/default-source/health-topics/coronavirus/myth-busters/web-mythbusters/who_hydroxychloraquine_hd.jpg"
+								src="https://1.bp.blogspot.com/-xcmCaD7km_4/XWAbv3ZmCDI/AAAAAAAAAOo/DoFyVRvilKIBXf4eadtT8K_TiR7GZ5QDQCLcBGAs/w1200-h630-p-k-no-nu/Automobile%2BSpare%2BParts%2BBusiness.jpg"
 								alt="Second slide"
 							/>
 							<Carousel.Caption>
@@ -63,7 +63,7 @@ class Products extends Component {
 						<Carousel.Item interval={2000} className={classes.Carousel}>
 							<img
 								className="d-block w-100"
-								src="https://www.hpcismart.com/images/website/ManChemNews/DIR_189/F_98505.jpg"
+								src="http://www.ifmpimeks.com/english/images/uretim.jpg"
 								alt="Third slide"
 							/>
 							<Carousel.Caption>
