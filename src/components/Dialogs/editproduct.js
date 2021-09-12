@@ -106,9 +106,33 @@ export default function FormDialog(props) {
 						fullWidth
 						onChange={onChangeProductDescription}
 					/>
-					<TextField autoFocus margin="dense" id="name" value={price} label="Price" fullWidth onChange={onChangeProducPrice} />
-					<TextField autoFocus margin="dense" id="name" value={category} label="Cetegory" fullWidth onChange={onChangeProductCategory} />
-					<TextField autoFocus margin="dense" id="name" value={imgUrl} label="Image Url" fullWidth onChange={onChangeProductImgUrl} />
+					<TextField
+						autoFocus
+						margin="dense"
+						id="name"
+						value={price}
+						label="Price"
+						fullWidth
+						onChange={onChangeProducPrice}
+					/>
+					<TextField
+						autoFocus
+						margin="dense"
+						id="name"
+						value={category}
+						label="Cetegory"
+						fullWidth
+						onChange={onChangeProductCategory}
+					/>
+					<TextField
+						autoFocus
+						margin="dense"
+						id="name"
+						value={imgUrl}
+						label="Image Url"
+						fullWidth
+						onChange={onChangeProductImgUrl}
+					/>
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={handleClose} color="primary">
