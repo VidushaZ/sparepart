@@ -16,6 +16,8 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Tooltip from '@material-ui/core/Tooltip';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -44,6 +46,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function RecipeReviewCard(props) {
+	const [ anchorEl, setAnchorEl ] = React.useState(null);
+
+	const handleClick = (event) => {
+		setAnchorEl(event.currentTarget);
+	};
+
+	const handleClose = () => {
+		setAnchorEl(null);
+	};
 	const classes = useStyles();
 	const [ expanded, setExpanded ] = React.useState(false);
 
@@ -71,7 +82,17 @@ export default function RecipeReviewCard(props) {
 				}}
 				action={
 					<IconButton aria-label="settings">
-						<MoreVertIcon />
+						<MoreVertIcon onClick={handleClick} />
+						<Menu
+							id="simple-menu"
+							anchorEl={anchorEl}
+							keepMounted
+							open={Boolean(anchorEl)}
+							onClose={handleClose}
+						>
+							<MenuItem onClick={handleClose}>Edit</MenuItem>
+							<MenuItem onClick={handleClose}>Delete</MenuItem>
+						</Menu>
 					</IconButton>
 				}
 				title={props.product.name}
