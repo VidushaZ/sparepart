@@ -41,10 +41,42 @@ export default function FormDialog(props) {
 				setPrice(res.data.price);
 				setImgUrl(res.data.imgUrl);
 				setCategory(res.data.category);
+				setIsAvaliable((res.data.isAvailable))
 			})
 			.catch((error) => {
 				console.log(error);
 			});
+	};
+
+	const editData = () => {
+		const productObject = {
+			name: name,
+			description: description,
+			price: price,
+			category: category,
+			isAvailable: isAvailable,
+			imgUrl: imgUrl
+		};
+
+		axios
+			.put('http://localhost:5000/api/products/' + itemid, productObject, {
+				headers: {
+					token: token
+				}
+			})
+			.then((res) => {
+				console.log(res.data);
+				console.log('Product successfully updated');
+				// Redirect to Student List
+				//this.props.history.push('/products');
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+	const handleSave = () => {
+		editData()
+		handleClose()
 	};
 
 	const handleClose = () => {
@@ -135,7 +167,7 @@ export default function FormDialog(props) {
 					/>
 				</DialogContent>
 				<DialogActions>
-					<Button onClick={handleClose} color="primary">
+					<Button onClick={handleSave} color="primary">
 						Save
 					</Button>
 					<Button onClick={handleClose} color="primary">
