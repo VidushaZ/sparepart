@@ -41,7 +41,7 @@ export default function FormDialog(props) {
 				setPrice(res.data.price);
 				setImgUrl(res.data.imgUrl);
 				setCategory(res.data.category);
-				setIsAvaliable((res.data.isAvailable))
+				setIsAvaliable(res.data.isAvailable)
 			})
 			.catch((error) => {
 				console.log(error);
@@ -57,7 +57,8 @@ export default function FormDialog(props) {
 			isAvailable: isAvailable,
 			imgUrl: imgUrl
 		};
-
+		
+		console.log(productObject)
 		axios
 			.put('http://localhost:5000/api/products/' + itemid, productObject, {
 				headers: {
