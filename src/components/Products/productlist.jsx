@@ -18,6 +18,8 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Tooltip from '@material-ui/core/Tooltip';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import Editproduct from '../Dialogs/editproduct';
+import EditproductTest from '../Dialogs/editproductTest';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -47,16 +49,23 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RecipeReviewCard(props) {
 	const [ anchorEl, setAnchorEl ] = React.useState(null);
+	const [ expanded, setExpanded ] = React.useState(false);
+	const [ editopen, setEditopen ] = React.useState(false);
+	const classes = useStyles();
 
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
 
-	const handleClose = () => {
+	const handleMenuClose = () => {
 		setAnchorEl(null);
 	};
-	const classes = useStyles();
-	const [ expanded, setExpanded ] = React.useState(false);
+	const handleEditopen = () => {
+		setEditopen(true);
+	};
+	const handleEditclose = () => {
+		setEditopen(false);
+	};
 
 	const handleExpandClick = () => {
 		setExpanded(!expanded);
@@ -88,10 +97,12 @@ export default function RecipeReviewCard(props) {
 							anchorEl={anchorEl}
 							keepMounted
 							open={Boolean(anchorEl)}
-							onClose={handleClose}
+							onClose={handleMenuClose}
 						>
-							<MenuItem onClick={handleClose}>Edit</MenuItem>
-							<MenuItem onClick={handleClose}>Delete</MenuItem>
+							<MenuItem opened="true" onClick={handleEditopen}>
+								Edit
+							</MenuItem>
+							<MenuItem onClick={handleMenuClose}>Delete</MenuItem>
 						</Menu>
 					</IconButton>
 				}
@@ -123,6 +134,7 @@ export default function RecipeReviewCard(props) {
 					<Typography paragraph>{props.product.description}</Typography>
 				</CardContent>
 			</Collapse>
+			{editopen ? <Editproduct handleEditclose={handleEditclose} handleMenuClose={handleMenuClose} /> : null}
 		</Card>
 	);
 }
