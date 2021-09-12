@@ -134,7 +134,13 @@ export default function RecipeReviewCard(props) {
 					<Typography paragraph>{props.product.description}</Typography>
 				</CardContent>
 			</Collapse>
-			{editopen ? <Editproduct handleEditclose={handleEditclose} handleMenuClose={handleMenuClose} /> : null}
+			{editopen ? (
+				<Editproduct
+					itemid={props.product.id}
+					handleEditclose={handleEditclose}
+					handleMenuClose={handleMenuClose}
+				/>
+			) : null}
 		</Card>
 	);
 }
