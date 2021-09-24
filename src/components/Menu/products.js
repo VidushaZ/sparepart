@@ -4,17 +4,19 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+import Productadd from '../Products/productadd';
 
 const useStyles = makeStyles(() => ({
-	button:{
-		color:"white",
-		fontSize:"14px"
+	button: {
+		color: 'white',
+		fontSize: '14px'
 	}
-  }));
+}));
 
 export default function SimpleMenu() {
 	const classes = useStyles();
 	const [ anchorEl, setAnchorEl ] = React.useState(null);
+	const [ addopen, setAddopen ] = React.useState(false);
 
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
@@ -22,6 +24,7 @@ export default function SimpleMenu() {
 
 	const handleClose = () => {
 		setAnchorEl(null);
+		setAddopen(true);
 	};
 
 	return (
@@ -34,9 +37,10 @@ export default function SimpleMenu() {
 					<Link to="Products">Products</Link>
 				</MenuItem>
 				<MenuItem onClick={handleClose}>
-					<Link to="Register">Add Products</Link>
+					<Link>Add Products</Link>
 				</MenuItem>
 			</Menu>
+			{addopen ? <Productadd /> : null}
 		</div>
 	);
 }
