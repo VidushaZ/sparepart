@@ -6,6 +6,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import axios from 'axios';
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
 
 export default function FormDialog(props) {
 	let token = localStorage.getItem('login');
@@ -13,12 +16,20 @@ export default function FormDialog(props) {
 	const [ description, setDescription ] = React.useState('');
 	const [ price, setPrice ] = React.useState('');
 	const [ imgUrl, setImgUrl ] = React.useState('');
-	const [ isAvailable, setIsAvaliable ] = React.useState('');
+	//const [ isAvailable, setIsAvaliable ] = React.useState('');
 	const [ category, setCategory ] = React.useState('');
 	const [ errormessage, setErrormessage ] = React.useState('');
 
 	const { handleMenuClose, handleEditclose, itemid } = props;
 	const [ open, setOpen ] = React.useState(true);
+
+	const [ state, setState ] = React.useState({
+		isAvailable: true
+	});
+
+	const handleChange = (event) => {
+		setState({ ...state, isAvailable: event.target.checked });
+	};
 
 	React.useEffect(() => {
 		handleMenuClose();
@@ -41,7 +52,8 @@ export default function FormDialog(props) {
 				setPrice(res.data.price);
 				setImgUrl(res.data.imgUrl);
 				setCategory(res.data.category);
-				setIsAvaliable(res.data.isAvailable)
+				//setIsAvaliable(res.data.isAvailable);
+				setState({ isAvailable: res.data.isAvailable});
 			})
 			.catch((error) => {
 				console.log(error);
@@ -54,20 +66,20 @@ export default function FormDialog(props) {
 			description: description,
 			price: price,
 			category: category[0],
-			isAvailable: isAvailable,
+			isAvailable: state.isAvailable,
 			imgUrl: imgUrl
 		};
-		const productObjectTest = 
-			{
-				name: "testing",
-				description: "description",
-				price: 300,
-				category: "Covid Care",
-				isAvailable: false,
-				imgUrl: "https://www.mytrendyphone.eu/images/Puluz-PU465-Splash-Proof-PVC-Face-Shield-Transparent-08042020-02-p.jpg"
-			}
+		const productObjectTest = {
+			name: 'testing',
+			description: 'description',
+			price: 300,
+			category: 'Covid Care',
+			isAvailable: false,
+			imgUrl:
+				'https://www.mytrendyphone.eu/images/Puluz-PU465-Splash-Proof-PVC-Face-Shield-Transparent-08042020-02-p.jpg'
+		};
 
-		console.log(productObject)
+		console.log(productObject);
 		axios
 			.put('http://localhost:5000/api/products/' + itemid, productObject, {
 				headers: {
@@ -85,8 +97,8 @@ export default function FormDialog(props) {
 			});
 	};
 	const handleSave = () => {
-		editData()
-		handleClose()
+		editData();
+		handleClose();
 	};
 
 	const handleClose = () => {
@@ -110,7 +122,7 @@ export default function FormDialog(props) {
 	};
 
 	const onChangeProductIsAvailable = (e) => {
-		setIsAvaliable(e.target.value);
+		//setIsAvaliable(e.target.value);
 	};
 
 	const onChangeProductImgUrl = (e) => {
@@ -127,8 +139,17 @@ export default function FormDialog(props) {
 				onClose={handleClose}
 				aria-labelledby="form-dialog-title"
 			>
-				<DialogTitle id="form-dialog-title">Edit Product</DialogTitle>
+				<DialogTitle id="form-dialog-title">Edit Product </DialogTitle>
 				<DialogContent>
+					<FormControlLabel
+						value="start"
+						control={
+							<Switch checked={state.isAvailable} onChange={handleChange} name="checkedA" color="primary" />
+						}
+						label="Availability"
+						labelPlacement="start"
+					/>
+
 					<TextField
 						autoFocus
 						margin="dense"
@@ -138,6 +159,7 @@ export default function FormDialog(props) {
 						fullWidth
 						onChange={onChangeProductName}
 					/>
+
 					<TextField
 						autoFocus
 						margin="dense"

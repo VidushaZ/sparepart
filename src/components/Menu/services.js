@@ -31,7 +31,7 @@ export default function SimpleMenu() {
 			</Button>
 			<Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
 				<MenuItem onClick={handleClose}>
-					<Link to="Products">Services</Link>
+					<Link to="Services">Services</Link>
 				</MenuItem>
 				<MenuItem onClick={handleClose}>
 					<Link to="Register">Add Services</Link>

@@ -26,7 +26,7 @@ const Styles = (theme) => ({
   }
 });
 
-class Products extends Component {
+class Services extends Component {
 	state = {
 		allProducts: [],
 		rate: ''
@@ -136,4 +136,4 @@ class Products extends Component {
 		});
 	}
 }
-export default withStyles(Styles)(Products);
+export default withStyles(Styles)(Services);
