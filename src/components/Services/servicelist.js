@@ -18,7 +18,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Tooltip from '@material-ui/core/Tooltip';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import Editproduct from '../Dialogs/editproduct';
+import Editproduct from '../Products/editproduct';
 import Confirmdelete from '../Dialogs/confirm';
 
 const useStyles = makeStyles((theme) => ({

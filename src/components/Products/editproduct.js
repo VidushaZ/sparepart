@@ -16,7 +16,6 @@ export default function FormDialog(props) {
 	const [ description, setDescription ] = React.useState('');
 	const [ price, setPrice ] = React.useState('');
 	const [ imgUrl, setImgUrl ] = React.useState('');
-	//const [ isAvailable, setIsAvaliable ] = React.useState('');
 	const [ category, setCategory ] = React.useState('');
 	const [ errormessage, setErrormessage ] = React.useState('');
 
