@@ -1,34 +1,43 @@
-
 .headername {
-    color: whitesmoke !important; 
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1.8rem;
-    line-height: inherit;
-    padding-top: .3125rem;
-    white-space: nowrap;
-    margin-right: 2rem;
-    padding-bottom: .3125rem;
+	color: whitesmoke !important;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1.8rem;
+	line-height: inherit;
+	padding-top: .3125rem;
+	white-space: nowrap;
+	margin-right: 2rem;
+	padding-bottom: .3125rem;
 }
 
 .headername:hover {
-    color: rgba(245, 245, 245, 0.712) !important; 
-    text-decoration: none;
+	color: rgba(245, 245, 245, 0.712) !important;
+	text-decoration: none;
 }
 
 .menuitems {
-    color: whitesmoke !important; 
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1.1rem;
-    line-height: inherit;
-    padding-top: .3125rem;
-    white-space: nowrap;
-    margin-right: 1rem;
-    padding-bottom: .3125rem;
+	color: whitesmoke !important;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1.1rem;
+	line-height: inherit;
+	padding-top: .3125rem;
+	white-space: nowrap;
+	margin-right: 1rem;
+	padding-bottom: .3125rem;
 }
 
 .menuitems:hover {
-    color: rgba(245, 245, 245, 0.712) !important; 
-    text-decoration: none;
+	color: rgba(245, 245, 245, 0.712) !important;
+	text-decoration: none;
+}
+
+
+a:hover {
+	text-decoration: none !important;
+}
+a {
+    color: #343a40 !important;
+    text-decoration: none !important;
+    background-color: transparent !important;
 }

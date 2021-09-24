@@ -15,6 +15,14 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import { Link } from 'react-router-dom';
+import Products from '../Menu/products';
+import Services from '../Menu/services'
+import { decode as base64_decode, encode as base64_encode } from 'base-64';
+
+let token = localStorage.getItem('login');
+
+let userRole = localStorage.getItem('userRole');
+let decodeduserRole = base64_decode(userRole);
 
 const useStyles = makeStyles((theme) => ({
 	grow: {
@@ -146,9 +154,25 @@ export default function PrimarySearchAppBar() {
 						<Link to="Products" className="headername">
 							ESpare
 						</Link>
-						<Link to="Register" className="menuitems">
-							Add Product
-						</Link>
+						{decodeduserRole === 'Admin' ? (
+							<div className="menuitems">
+								<Link className="menuitems">
+									<Products />
+								</Link>
+								<Link className="menuitems">
+									<Services />
+								</Link>
+							</div>
+						) : (
+							<div className="menuitems">
+								<Link to="Products" className="menuitems">
+									Products
+								</Link>
+								<Link to="Products" className="menuitems">
+									Services
+								</Link>
+							</div>
+						)}
 					</Typography>
 					<div className={classes.grow} />
 					<div className={classes.search}>
