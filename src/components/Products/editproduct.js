@@ -50,7 +50,7 @@ export default function FormDialog(props) {
 				setDescription(res.data.description);
 				setPrice(res.data.price);
 				setImgUrl(res.data.imgUrl);
-				setCategory(res.data.category);
+				setCategory(res.data.category[0]);
 				//setIsAvaliable(res.data.isAvailable);
 				setState({ isAvailable: res.data.isAvailable});
 			})
@@ -64,7 +64,7 @@ export default function FormDialog(props) {
 			name: name,
 			description: description,
 			price: price,
-			category: category[0],
+			category: category,
 			isAvailable: state.isAvailable,
 			imgUrl: imgUrl
 		};
@@ -72,13 +72,13 @@ export default function FormDialog(props) {
 			name: 'testing',
 			description: 'description',
 			price: 300,
-			category: 'Covid Care',
+			category: 'Adult Care',
 			isAvailable: false,
 			imgUrl:
 				'https://www.mytrendyphone.eu/images/Puluz-PU465-Splash-Proof-PVC-Face-Shield-Transparent-08042020-02-p.jpg'
 		};
 
-		console.log(productObject);
+		console.log(category);
 		axios
 			.put('http://localhost:5000/api/products/' + itemid, productObject, {
 				headers: {
