@@ -19,7 +19,7 @@ export default function FormDialog(props) {
 	const [ category, setCategory ] = React.useState('');
 	const [ errormessage, setErrormessage ] = React.useState('');
 
-	const { handleMenuClose, handleEditclose, itemid } = props;
+	const { handleaddopen, handleEditclose, itemid } = props;
 	const [ open, setOpen ] = React.useState(true);
 
 	const [ state, setState ] = React.useState({
@@ -30,21 +30,18 @@ export default function FormDialog(props) {
 		setState({ ...state, isAvailable: event.target.checked });
 	};
 
-	
-
 	React.useEffect(() => {
 		//getData();
 	}, []);
 
-	
 	const handleSave = () => {
-		//editData();
+		addData();
 		handleClose();
 	};
 
 	const handleClose = () => {
 		setOpen(false);
-		//handleEditclose();
+		handleaddopen();
 	};
 	const onChangeProductName = (e) => {
 		setName(e.target.value);
@@ -70,6 +67,35 @@ export default function FormDialog(props) {
 		setImgUrl(e.target.value);
 	};
 
+	const addData = () => {
+		const productObject = {
+			name: name,
+			description: description,
+			price: price,
+			category: category[0],
+			isAvailable: state.isAvailable,
+			imgUrl: imgUrl
+		};
+
+		let token = localStorage.getItem('login');
+		axios
+			.post('http://localhost:5000/api/products/', productObject, {
+				headers: {
+					token: token
+				}
+			})
+			.then((res) => {
+				console.log(res.data);
+				console.log(token);
+				console.log('Student successfully updated');
+				// Redirect to Student List
+				this.props.history.push('/products');
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+
 	return (
 		<div>
 			<Dialog
@@ -80,12 +106,17 @@ export default function FormDialog(props) {
 				onClose={handleClose}
 				aria-labelledby="form-dialog-title"
 			>
-				<DialogTitle id="form-dialog-title">Edit Product </DialogTitle>
+				<DialogTitle id="form-dialog-title">Add Product </DialogTitle>
 				<DialogContent>
 					<FormControlLabel
 						value="start"
 						control={
-							<Switch checked={state.isAvailable} onChange={handleChange} name="checkedA" color="primary" />
+							<Switch
+								checked={state.isAvailable}
+								onChange={handleChange}
+								name="checkedA"
+								color="primary"
+							/>
 						}
 						label="Availability"
 						labelPlacement="start"

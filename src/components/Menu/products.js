@@ -22,25 +22,32 @@ export default function SimpleMenu() {
 		setAnchorEl(event.currentTarget);
 	};
 
+	const handleCloseOnly = () => {
+		setAnchorEl(null);
+	};
+
 	const handleClose = () => {
 		setAnchorEl(null);
 		setAddopen(true);
 	};
+	const handleaddopen = () =>{
+		setAddopen(false)
+	}
 
 	return (
 		<div>
 			<Button className={classes.button} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
 				Products
 			</Button>
-			<Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-				<MenuItem onClick={handleClose}>
+			<Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleCloseOnly}>
+				<MenuItem onClick={handleCloseOnly}>
 					<Link to="Products">Products</Link>
 				</MenuItem>
 				<MenuItem onClick={handleClose}>
 					<Link>Add Products</Link>
 				</MenuItem>
 			</Menu>
-			{addopen ? <Productadd /> : null}
+			{addopen ? <Productadd handleaddopen={handleaddopen} /> : null}
 		</div>
 	);
 }
