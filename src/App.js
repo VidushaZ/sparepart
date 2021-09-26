@@ -14,6 +14,7 @@ import ProductDetail from './components/productDetail';
 import ProductEdit from './components/productEdit';
 import ProfileEdit from './components/editProfile';
 import Login from './components/login';
+import LoginTest from './components/Login/login'
 import { ProtectRoute } from './components/protectRoutes';
 import Carts from './components/carts';
 import About from './components/about';
@@ -40,7 +41,7 @@ function App() {
 					<ProtectRoute exact path="/Register" component={Register} />
 
 					<Route exact path="/" component={ProductsTest} />
-					<Route exact path="/login" component={Login} />
+					<Route exact path="/login" component={LoginTest} />
 
 					<Route exact path="/Orders" component={Orders} />
 
@@ -75,7 +76,7 @@ function App() {
 
 				<Route exact path="/details/user/:id" component={UserOrderDetail} />
 
-				<Route exact path="/login" component={Login} />
+				<Route exact path="/login" component={LoginTest} />
 
 				<Route exact path="/editProfile" component={ProfileEdit} />
 

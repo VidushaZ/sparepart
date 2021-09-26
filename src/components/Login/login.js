@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, TextField, Grid, Paper, AppBar, Typography, Toolbar, Link } from '@material-ui/core';
-import { BRAND_NAME } from '../constants';
+//import { BRAND_NAME } from '../constants';
 class Login extends React.Component {
 	constructor(props) {
 		super(props);
@@ -26,7 +26,7 @@ class Login extends React.Component {
 					<Toolbar>
 						<Grid container justify="center" wrap="wrap">
 							<Grid item>
-								<Typography variant="h6">{BRAND_NAME}</Typography>
+								<Typography variant="h6">ESpare</Typography>
 							</Grid>
 						</Grid>
 					</Toolbar>
@@ -81,7 +81,7 @@ class Login extends React.Component {
 													type="submit"
 													className="button-block"
 												>
-													Submit
+													Login
 												</Button>
 											</Grid>
 										</Grid>
