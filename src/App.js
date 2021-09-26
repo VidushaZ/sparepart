@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import Products from "./components/products";
 import ProductsTest from './components/Products/index';
+import Services from './components/Services/index'
 import ProductsUser from './components/userProducts';
 import HomeProducts from './components/homeProducts';
 import NavBar from './components/navbar';
@@ -48,6 +49,8 @@ function App() {
 					<Route exact path="/detail/:id" component={ProductDetail} />
 
 					<Route exact path="/Products" component={ProductsTest} />
+
+          <Route exact path="/Services" component={Services} />
 
 					<Route path="" component={() => '404 NOT FOUND'} />
 				</Switch>

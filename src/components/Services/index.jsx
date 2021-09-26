@@ -3,8 +3,7 @@ import Product from '../product';
 import axios from 'axios';
 import { withStyles } from '@material-ui/core/styles';
 import Carousel from 'react-bootstrap/Carousel';
-import Productlist from './productlist';
-import Grids from './grid';
+import Servicelist from './servicelist';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
@@ -79,7 +78,7 @@ class Services extends Component {
 				<Grid container spacing={1}>
 					{this.state.allProducts.map((product) => (
 						<Grid item xs={12} sm={6} md={3} className={classes.griditem} >
-							<Productlist key={product.id} product={product} />
+							<Servicelist key={product.id} product={product} />
 						</Grid>
 					))}
 				</Grid>
