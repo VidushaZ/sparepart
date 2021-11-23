@@ -40,7 +40,7 @@ class Services extends Component {
 						<Carousel.Item interval={2000} className={classes.Carousel}>
 							<img
 								className="d-block w-100"
-								src="https://www.i4u.com/wp-content/uploads/2021/06/2947967.jpg"
+								src="https://wallpapercave.com/wp/wp4043196.jpg"
 								alt="First slide"
 							/>
 							<Carousel.Caption>

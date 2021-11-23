@@ -41,7 +41,7 @@ class Products extends Component {
 						<Carousel.Item interval={2000} className={classes.Carousel}>
 							<img
 								className="d-block w-100"
-								src="https://www.i4u.com/wp-content/uploads/2021/06/2947967.jpg"
+								src="https://wallpapercave.com/wp/wp4043196.jpg"
 								alt="First slide"
 							/>
 							<Carousel.Caption>
@@ -60,6 +60,7 @@ class Products extends Component {
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 							</Carousel.Caption>
 						</Carousel.Item>
+						
 						<Carousel.Item interval={2000} className={classes.Carousel}>
 							<img
 								className="d-block w-100"
